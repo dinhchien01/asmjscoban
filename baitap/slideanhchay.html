@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide show</title>
+</head>
+<body>
+    <img id="image" style="height: 600px;width: 400px;" src="" alt="">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        window.onload = function () {
+            loadAnh();
+        }
+
+        let intervalId;
+        document.getElementById('start').onclick = function () {
+            intervalId = setInterval('changeImage()', 1500);
+        }
+
+        document.getElementById('stop').addEventListener('click', function () {
+            clearInterval(intervalId);
+        })
+
+        let index = 0;
+        //B1: tao danh sach ảnh
+        const listAnh = [
+            './img/anh1.jpg',
+            './img/anh2.jpg',
+            './img/anh3.png',
+            './img/anh4.png',
+            './img/anh5.png',
+        ];
+        function loadAnh() {
+            document.getElementById('image').src = listAnh[index];         
+        }
+        function changeImage() {
+            index ++;
+            if (index == listAnh.length) { //nếu index bằng số lượng phần tử trong mảng -> gán = 0
+                index = 0;
+            }
+            loadAnh();
+        }
+    </script>
+</body>
+</html>
+<!-- Prev Next Start Stop -->

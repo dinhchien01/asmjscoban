@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" onchange="validateName()">
+            <p id="errorName" style="color: red;"></p>
+        </div>
+        <div>
+            <label for="category">Type</label>
+            <select name="category" id="category" onchange="changeType()">
+                <option value="1">Loại 1</option>
+                <option value="2">Loại 2</option>
+                <option value="3">Loại 3</option>
+            </select>
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price" value="10000" disabled>
+        </div>
+        <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity" id="quantity" onchange="changeQuantity()">
+        </div>
+        <div>
+            <label for="place">Place</label>
+            <!-- <select name="place" id="place" onchange="changePlace()">
+                <option value="1">Nội thành</option>
+                <option value="2">Ngoại thành</option>
+            </select> -->
+            <div>
+                <input type="radio" id="place" name="place" value="1" onchange="changePlace()">
+                <span>Nội Thành</span>
+                <input type="radio" id="place" name="place" value="2" onchange="changePlace()">
+                <span>Ngoại thành</span>
+            </div>
+        </div>
+        <div>
+            <label for="ship">Ship</label>
+            <input type="number" name="ship" id="ship" disabled>
+        </div>
+        <div>
+            <label for="total">Total</label>
+            <input type="number" name="total" id="total" disabled>
+        </div>
+    </form>
+</body>
+</html>

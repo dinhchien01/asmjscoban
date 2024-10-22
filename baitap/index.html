@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#cart">Giỏ hàng</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="img/anh1.jpg" style="width:100%" >
+        </div>
+    
+        <div class="mySlides fade">
+            <img src="img/anh2.jpg" style="width:100%" >
+        </div>
+    
+        <div class="mySlides fade">
+            <img src="images/product3.jpg" style="width:100%">
+        </div>
+    
+        <!-- Nút điều khiển trước/sau -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+
+    <main>
+        <div class="product" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="img/anh1.jpg" alt="Product 1" class="product-image" />
+            <h3>Giày thể thao</h3>
+            
+            <button onclick="addToCart('Sản phẩm 2', 200000)">Thêm vào giỏ hàng</button>
+        </div>
+        
+            <div class="product" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="img/anh1.jpg" alt="" width="200px">
+                <h3>Giày boston </h3>
+                <p>Giá: 200.000 VNĐ</p>
+                <button onclick="addToCart('Sản phẩm 2', 200000)">Thêm vào giỏ hàng</button>
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2>Giỏ hàng</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Tổng tiền: 0 VNĐ</p>
+        </section>
+
+        <section id="contact">
+            <h2>Liên hệ</h2>
+            <form id="contact-form" onsubmit="return validateForm()">
+                <label for="name">Tên:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <button type="submit">Gửi</button>
+            </form>
+            <p id="form-message"></p>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
